@@ -1,0 +1,109 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+struct BST
+{
+int info;
+struct BST *lc,*rc;
+}
+*root=NULL;
+typedef struct BST BST;
+BST *insert(BST*root,int item)
+{
+BST *newnode;
+BST *ptr,*par;
+newnode=(BST*)malloc(sizeof(BST));
+newnode->lc=newnode->rc=NULL;
+newnode->info=item;
+if(root==NULL)
+{
+root=newnode;
+return root;
+}
+else
+{
+ptr=root;
+while(ptr!=NULL)
+{
+if(ptr->info>item)
+{
+par=ptr;
+ptr=ptr->lc;
+}
+else if(ptr->info<item)
+{
+par=ptr;
+ptr=ptr->rc;
+}
+else
+{
+printf("Duplicate Value");
+return o;
+}
+}
+if(par->info>item)
+{
+par->lc=newnode;
+}
+else
+[
+par->rc=newnode;
+}
+return root;
+}
+}
+void preorder(BST *root)
+{
+BST *ptr=root;
+if(ptr==NULL)
+{
+return;
+}
+printf("%d",ptr->info);
+preorder(ptr->lc);
+preorder(ptr->rc);
+}
+void inorder(BST *root)
+{
+BST *ptr=root;
+if(ptr==NULL)
+{
+return;
+}
+inorder(ptr->lc);
+printf("%d",ptr->info);
+inorder(ptr->rc);
+]
+void postorder(BST *root)
+{
+BST *ptr=root;
+if(ptr==NULL)
+{
+return;
+}
+postorder(ptr->lc);
+postorder(ptr->rc);
+printf("%d",ptr->info);
+}
+void main()
+{
+int n,i;
+clrscr();
+printf("Enter the No. of Values to be Inserted:");
+scanf("%d",&n);
+while(n>0)
+{
+printf("Enter the Value to be Inserted");
+scanf("%d",&i);
+n--;
+}
+printf("Tree is \n");
+printf("\nPreorder\n");
+preorder(root);
+printf("\ninorder\n");
+inorder(root);
+printf("\nPostorder\n");
+postorder(root);
+getch()'
+}
+

@@ -1,0 +1,61 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+void push(int item);
+int pop();
+void display();
+int stack[10],top==1;
+void main()
+{
+int ch,i,item;
+clrscr();
+while()
+{
+printf("1.push 2.pop 3.display 4.exit \n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1:printf("Enter the item");
+scanf("%d",&item);
+break;
+case 2:printf("poped item %d ",pop());
+break;
+case 3:display()
+break;
+case 4:Exit(0);
+}
+}
+]
+void push(int item)
+{
+if(top==9)
+printf("stack overflow");
+else
+{
+top++;
+stack[top]=item;
+}
+}
+int pop()
+{
+int x;
+if(top<0)
+{
+printf("stack underflow");
+return 0;
+}
+else
+{
+x=stack[top];
+top--;
+return x;
+}}
+void display()
+int i;
+printf(element of stack are:");
+for(i=top;i>=0;i--)
+{
+printf("%d",stack[i]);
+}
+}
+

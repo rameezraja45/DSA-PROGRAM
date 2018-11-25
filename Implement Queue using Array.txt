@@ -1,0 +1,76 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+int que[7]
+int front=-1;
+int rear=-1;
+
+void insert int(int);
+int del();
+void display();
+void insert (int item)
+{
+if(rear==6)
+printf("overflow\n");
+else if(front<0)
+{
+front=0;
+rear=0;
+que[rear]=item;
+}
+else
+{
+rear++;
+que[rear=item;
+printf("Item Entered \n");
+}
+}
+int del()
+{
+int x;
+if (front<0)
+printf("Queue underflow\n");
+else if (front==rear)
+{
+x=que[front];
+ffront=rear=-1;
+return x;
+}
+else
+{
+x=que[front];
+front++;
+return x;
+}
+return 0;
+}
+void display()
+{
+int i;
+printf("Element Queue are \n");
+for(i=front;i<=rear;i++);
+printf("%d",que[i]);
+}
+void main()
+{
+int q,item;
+clrscr();
+while(1)
+{
+printf("press 1 to insert:\n press 2 to delete:\n press 3to display:\n press 4 to exit:");
+scanf("%d",&que);
+switch (que)
+{
+case 1:printf("Enter the item");
+scanf("%d",&item);
+insert(item);
+break;
+case 2:printf("poped item %d ",pop());
+break;
+case 3:display()
+break;
+case 4:Exit(0);
+}
+}
+getch();
+}
